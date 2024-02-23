@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
-import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-database.js";
+import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-database.js";
 
 const appSettings = {
     databaseURL: "https://realtime-database-61a93-default-rtdb.europe-west1.firebasedatabase.app/"
@@ -20,11 +20,18 @@ addButtonEl.addEventListener("click", function() {
 });
 
 onValue(shoppingListInDB, function(snapshot) {
-    let itemsArray = Object.values(snapshot.val());
-    clearShoppingListEl();
-    itemsArray.forEach(element => {
-        appendItemToShoppingList(element);
+    if (snapshot.exists()) {
+        let itemsArray = Object.entries(snapshot.val());
+        
+        clearShoppingListEl();
+
+        itemsArray.forEach(item => {
+            appendItemToShoppingList(item);
     });
+    } else {
+        shoppingListEl.innerHTML = "No items in shopping list yet...";
+    }
+    
 });
 
 function clearShoppingListEl() {
@@ -35,6 +42,17 @@ function clearInputField() {
     inputFieldEl.value = '';
 }
 
-function appendItemToShoppingList(value) {
-    shoppingListEl.innerHTML += `<li>${value}</li>`;
+function appendItemToShoppingList(item) {
+    let itemID = item[0];
+    let itemValue = item[1];
+    let newElement = document.createElement("li");
+
+    newElement.textContent = itemValue;
+
+    newElement.addEventListener("click", function() {
+        let exactLocationOfIteminDB = ref(database, `shoppingList/${itemID}`);
+        remove(exactLocationOfIteminDB);
+    });
+
+    shoppingListEl.append(newElement);
 }
