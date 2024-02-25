@@ -13,7 +13,7 @@ To run this app locally, follow these steps:
 
 1. Clone this repository to your local machine.
 2. Navigate to the project directory.
-3. Run the app using Live Server VS Code extension
+3. Run the app using Live Server VS Code extension => https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
 
 # Firebase Configuration
 Before running the app, you need to configure Firebase. Follow these steps:
