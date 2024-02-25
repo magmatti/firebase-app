@@ -56,3 +56,12 @@ function appendItemToShoppingList(item) {
 
     shoppingListEl.append(newElement);
 }
+
+function getCurrentYear() {
+    const date = new Date();
+    const year = date.getFullYear();
+    const yearElement = document.getElementById("info");
+    yearElement.append(" " + year);
+}
+
+getCurrentYear();

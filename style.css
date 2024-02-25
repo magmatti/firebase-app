@@ -58,6 +58,7 @@ ul {
     max-width: 320px; 
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 5px;
     margin: 0 auto;
     padding: 0;
@@ -79,4 +80,13 @@ ul li {
 ul li:hover {
     cursor: pointer;
     background-color: #ffecc7;
+}
+
+.logo-image {
+    width: 30px;
+    height: 30px;
+}
+
+h1, h3 {
+    text-align: center;
 }
