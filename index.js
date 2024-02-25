@@ -1,6 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
 import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-database.js";
 
+// To run the app, provide your own Realtime Database URL
 const appSettings = {
     databaseURL: "YOUR_REALTIME_DATABASE_URL"
 }
