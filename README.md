@@ -5,17 +5,17 @@ Live Demo: https://shopping-list-firebase-app-87905d.netlify.app/
 
 This repository contains a simple mobile app built using vanilla HTML, CSS and JavaScript. It's main purpose is to test the capabilities of Firebase, a popular platform for mobile and web applications.
 
-# Overview
+## Overview
 This project is a basic app designed to showcase how Firebase can be integrated into mobile apps or websites. Its main feature is to demonstrate how Firebase can be used to share data across multiple devices. The app uses HTML, CSS, and JavaScript for the front end and Firebase Real-Time Database for storing data. The app is designed for both functionality testing and educational purposes.
 
-# Installation
+## Installation
 To run this app locally, follow these steps:
 
 1. Clone this repository to your local machine.
 2. Navigate to the project directory.
-3. Run the app using Live Server VS Code extension => https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
+3. Run the app using Live Server VS Code extension, [get it here](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
-# Firebase Configuration
+## Firebase Configuration
 Before running the app, you need to configure Firebase. Follow these steps:
 
 1. Create a Firebase project using Firebase Console.
